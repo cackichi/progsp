@@ -79,6 +79,7 @@ public class ClientGUI extends Application {
         try {
             if (socket != null && !socket.isClosed()) {
                 socket.close();
+                answerLabel.setText("Соединение закрыто");
             }
         } catch (IOException e) {
             e.printStackTrace();

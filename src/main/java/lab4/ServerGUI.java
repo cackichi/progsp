@@ -20,26 +20,32 @@ public class ServerGUI {
                      ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream())) {
 
                     System.out.println("Клиент подключен");
+                    while (true) {
+                        try {
+                            int num = (int) objectInputStream.readObject();
+                            String result;
+                            switch (num) {
+                                case 0 -> result = "ноль";
+                                case 1 -> result = "один";
+                                case 2 -> result = "два";
+                                case 3 -> result = "три";
+                                case 4 -> result = "четыре";
+                                case 5 -> result = "пять";
+                                case 6 -> result = "шесть";
+                                case 7 -> result = "семь";
+                                case 8 -> result = "восемь";
+                                case 9 -> result = "девять";
+                                case 10 -> result = "десять";
+                                default -> result = "вводите от 0 до 10";
+                            }
 
-                    int num = (int) objectInputStream.readObject();
-                    String result;
-                    switch (num) {
-                        case 0 -> result = "ноль";
-                        case 1 -> result = "один";
-                        case 2 -> result = "два";
-                        case 3 -> result = "три";
-                        case 4 -> result = "четыре";
-                        case 5 -> result = "пять";
-                        case 6 -> result = "шесть";
-                        case 7 -> result = "семь";
-                        case 8 -> result = "восемь";
-                        case 9 -> result = "девять";
-                        case 10 -> result = "десять";
-                        default -> result = "вводите от 0 до 10";
+                            objectOutputStream.writeObject(result);
+                            objectOutputStream.flush();
+                        }catch (IOException e){
+                            System.out.println("Соединение с клиентом закрыто.");
+                            break;
+                        }
                     }
-
-                    objectOutputStream.writeObject(result);
-                    objectOutputStream.flush();
 
                 } catch (ClassNotFoundException e) {
                     throw new RuntimeException(e);
