@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="lab6.RaceController">
+
+    <top>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10px;">
+            <Button text="Старт" onAction="#startRace" fx:id="startButton"/>
+            <Button text="Стоп" onAction="#stopRace" fx:id="stopButton"/>
+        </HBox>
+    </top>
+
+    <center>
+        <Pane fx:id="trackPane" prefWidth="600" prefHeight="600" />
+    </center>
+
+</BorderPane>
