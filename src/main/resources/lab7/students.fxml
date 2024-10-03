@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab7.MainController">
+   <children>
+      <TableView fx:id="studentsTable" layoutX="6.0" layoutY="300.0" prefHeight="299.0" prefWidth="401.0">
+        <columns>
+          <TableColumn fx:id="idStudentColumn" prefWidth="29.5999755859375" text="id" />
+          <TableColumn fx:id="nameStudentColumn" prefWidth="80.00003051757812" text="Имя" />
+            <TableColumn fx:id="surnameStudentColumn" prefWidth="80.00003051757812" text="Фамилия" />
+            <TableColumn fx:id="facultyStudentColumn" prefWidth="80.00003051757812" text="Факультет" />
+            <TableColumn fx:id="yearOfStudyStudentColumn" prefWidth="33.5999755859375" text="Курс" />
+            <TableColumn fx:id="groupNumberStudentColumn" prefWidth="93.5999755859375" text="Номер группы" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nameField" layoutX="29.0" layoutY="65.0" prefHeight="26.0" prefWidth="80.0" promptText="Имя" />
+      <TextField fx:id="surnameField" layoutX="125.0" layoutY="65.0" prefHeight="26.0" prefWidth="80.0" promptText="Фамилия" />
+      <TextField fx:id="facultyField" layoutX="219.0" layoutY="65.0" prefHeight="26.0" prefWidth="80.0" promptText="Факультет" />
+      <TextField fx:id="yearOfStudyField" layoutX="312.0" layoutY="65.0" prefHeight="26.0" prefWidth="80.0" promptText="Курс" />
+      <TextField fx:id="groupNumberField" layoutX="405.0" layoutY="65.0" prefHeight="26.0" prefWidth="96.0" promptText="Номер группы" />
+      <Button fx:id="saveButton" layoutX="513.0" layoutY="65.0" mnemonicParsing="false" onAction="#save" text="Сохранить" />
+      <TableView fx:id="searchTable" layoutX="418.0" layoutY="300.0" prefHeight="299.0" prefWidth="401.0">
+         <columns>
+            <TableColumn fx:id="idSearchColumn" prefWidth="29.5999755859375" text="id" />
+            <TableColumn fx:id="nameSearchColumn" prefWidth="80.00003051757812" text="Имя" />
+            <TableColumn fx:id="surnameSearchColumn" prefWidth="80.00003051757812" text="Фамилия" />
+            <TableColumn fx:id="facultySearchColumn" prefWidth="80.00003051757812" text="Факультет" />
+            <TableColumn fx:id="yearOfStudySearchColumn" prefWidth="33.5999755859375" text="Курс" />
+            <TableColumn fx:id="groupNumberSearchColumn" prefWidth="93.5999755859375" text="Номер группы" />
+         </columns>
+      </TableView>
+      <Button fx:id="deleteButton" layoutX="599.0" layoutY="65.0" mnemonicParsing="false" onAction="#delete" text="Удалить" />
+      <Label layoutX="15.0" layoutY="237.0" prefHeight="53.0" prefWidth="190.0" text="Все студенты">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="417.0" layoutY="237.0" prefHeight="54.0" prefWidth="227.0" text="Результат поиска">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="surnameSearchField" layoutX="417.0" layoutY="191.0" prefHeight="26.0" prefWidth="96.0" promptText="Фамилия" />
+      <TextField fx:id="facultySearchField" layoutX="531.0" layoutY="191.0" prefHeight="26.0" prefWidth="80.0" promptText="Факультет" />
+      <Button fx:id="searchButton" layoutX="629.0" layoutY="191.0" mnemonicParsing="false" onAction="#search" text="Искать" />
+   </children>
+</AnchorPane>
